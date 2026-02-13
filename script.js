@@ -16,7 +16,6 @@ const CUSTEIO = [
     "Serviços públicos", "aquisição de materiais de laboratório", "compra de materiais esportivos", "transporte de alunos"
 ];
 const CAPITAL = ["construção de instalações necessárias ao ensino", "aquisição de equipamentos", "compra de mobiliário", "acervo para biblioteca"];
-const ITENS_PARA_AGRUPAR = ["aquisição de material de consumo para atividades de apoio ao ensino", "compra de materiais didáticos", "aquisição de materiais escolares"];
 
 let editalGlobal = "", dadosFiltradosPlanilha = [], totalCusteioInicial = 0, totalCapitalInicial = 0;
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxbbvc3h7jDscetsxqTdcFtTp6yL1zONKjbnv6jrURPt7S3Ex820Vzr8eRnW3BGsMiq/exec';
@@ -230,5 +229,6 @@ document.getElementById('btn-pdf').onclick = () => {
     doc.save(`PAF_REFORMULADO_${mun}_${par}.pdf`);
 
 };
+
 
 
