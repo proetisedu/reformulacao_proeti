@@ -91,12 +91,16 @@ function montarInterface() {
         cont.innerHTML += `<div class="secao-titulo">${tipo === 'c' ? 'Custeio' : 'Capital'}</div><div id="${gridID}" class="grid-despesas"></div>`;
         const grid = document.getElementById(gridID);
         lista.forEach(nome => {
-            let vOri = 0;
-            if (nome.includes("(materiais de expediente")) {
-                ITENS_PARA_AGRUPAR.forEach(orig => {
-                    const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === orig.normalize("NFD").toUpperCase().trim());
-                    vOri += r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
-                });
+    let vOri = 0;
+    if (nome.includes("(materiais de expediente")) {
+        ITENS_PARA_AGRUPAR.forEach(orig => {
+            const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === orig.normalize("NFD").toUpperCase().trim());
+            vOri += r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
+        });
+    } else {
+        const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
+        vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
+    }
             } else {
                 const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
                 vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
@@ -226,4 +230,5 @@ document.getElementById('btn-pdf').onclick = () => {
     doc.save(`PAF_REFORMULADO_${mun}_${par}.pdf`);
 
 };
+
 
