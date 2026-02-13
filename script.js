@@ -100,6 +100,10 @@ function montarInterface() {
         const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
         vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
     }
+    } else {
+        const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
+        vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
+    }
             } else {
                 const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
                 vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
@@ -229,6 +233,7 @@ document.getElementById('btn-pdf').onclick = () => {
     doc.save(`PAF_REFORMULADO_${mun}_${par}.pdf`);
 
 };
+
 
 
 
