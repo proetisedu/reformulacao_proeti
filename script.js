@@ -1,33 +1,30 @@
+// 1. ESTRUTURA DE DADOS DOS MUNICÍPIOS
 const DADOS_MUNICIPIOS = {
     "2021": { "AGUIA BRANCA": "31.796.584/0001-87", "ANCHIETA": "27.142.694/0001-58", "ARACRUZ": "27.142.702/0001-66", "BAIXO GUANDU": "27.165.737/0001-10", "BARRA DE SAO FRANCISCO": "27.165.745/0001-67", "CACHOEIRO DE ITAPEMIRIM": "27.165.588/0001-90", "CARIACICA": "27.150.549/0006-23", "COLATINA": "27.165.729/0001-74", "CONCEICAO DA BARRA": "30.762.251/0001-74", "DOMINGOS MARTINS": "27.150.556/0001-10", "ECOPORANGA": "27.167.311/0001-04", "GUACUI": "30.746.224/0001-08", "IBATIBA": "27.744.150/0001-66", "IBIRACU": "30.303.948/0001-87", "ICONHA": "27.165.646/0001-85", "ITAPEMIRIM": "31.726.717/0001-49", "ITARANA": "27.104.363/0001-23", "JAGUARE": "30.704.185/0001-86", "LARANJA DA TERRA": "31.796.097/0001-14", "LINHARES": "27.167.410/0001-88", "MARATAIZES": "01.609.408/0001-28", "MARECHAL FLORIANO": "39.385.927/0001-22", "MARILANDIA": "27.744.176/0001-04", "MONTANHA": "27.174.051/0001-96", "NOVA VENECIA": "27.167.428/0001-80", "PEDRO CANARIO": "30.987.728/0001-10", "PINHEIROS": "27.174.085/0001-80", "PIUMA": "27.165.695/0001-18", "RIO NOVO DO SUL": "27.165.711/0001-72", "SANTA LEOPOLDINA": "30.651.745/0001-81", "SANTA TERESA": "30.756.812/0001-22", "SAO DOMINGOS DO NORTE": "36.350.312/0001-72", "SAO GABRIEL DA PALHA": "18.660.471/0001-91", "SAO JOSE DO CALCADO": "30.738.936/0001-85", "SERRA": "27.174.093/0019-56", "VIANA": "30.773.924/0001-91", "VILA PAVAO": "30.063.386/0001-41", "VILA VELHA": "27.165.554/0006-00", "VITORIA": "27.142.058/0009-83" },
     "2022": { "ALFREDO CHAVES": "27.142.686/0001-01", "ANCHIETA": "27.142.694/0001-58", "ARACRUZ": "27.142.702/0001-66", "ATILIO VIVACQUA": "27.165.620/0001-37", "BARRA DE SAO FRANCISCO": "27.165.745/0001-67", "BOA ESPERANCA": "30.726.320/0001-94", "BOM JESUS DO NORTE": "27.167.360/0001-39", "CARIACICA": "27.150.549/0006-23", "COLATINA": "27.165.729/0001-74", "CONCEICAO DA BARRA": "30.762.251/0001-74", "CONCEICAO DO CASTELO": "27.165.570/0001-98", "DOMINGOS MARTINS": "27.150.556/0001-10", "DORES DO RIO PRETO": "27.167.386/0001-87", "GUARAPARI": "30.805.395/0001-60", "IBATIBA": "27.744.150/0001-66", "IBITIRAMA": "31.726.490/0001-31", "ITAGUACU": "27.167.451/0001-74", "ITAPEMIRIM": "31.726.717/0001-49", "IUNA": "32.649.403/0001-52", "JAGUARE": "30.704.185/0001-86", "JOAO NEIVA": "31.776.479/0001-86", "LARANJA DA TERRA": "31.796.097/0001-14", "MANTENOPOLIS": "27.167.345/0001-90", "MARATAIZES": "45.231.010/0001-76", "MARILANDIA": "27.744.176/0001-04", "MONTANHA": "27.174.051/0001-96", "MUNIZ FREIRE": "27.165.687/0001-71", "MUQUI": "27.082.403/0001-83", "NOVA VENECIA": "27.167.428/0001-80", "PANCAS": "30.631.478/0001-80", "PINHEIROS": "27.174.085/0001-80", "PIUMA": "27.165.695/0001-18", "SAO DOMINGOS DO NORTE": "36.350.312/0001-72", "SAO JOSE DO CALCADO": "27.167.402/0001-31", "SAO MATEUS": "32.085.984/0001-47", "VARGEM ALTA": "31.723.570/0001-33", "VILA PAVAO": "30.063.386/0001-41", "VILA VELHA": "27.165.554/0006-00", "VITORIA": "27.142.058/0009-83" },
     "2023": { "AFONSO CLAUDIO": "27.165.562/0001-41", "AGUIA BRANCA": "31.796.584/0001-87", "ALEGRE": "31.442.430/0001-97", "ALTO RIO NOVO": "30.580.763/0001-10", "ANCHIETA": "27.142.694/0001-58", "ARACRUZ": "27.142.702/0001-66", "ATILIO VIVACQUA": "31.105.255/0001-42", "BOA ESPERANCA": "30.726.320/0001-94", "BOM JESUS DO NORTE": "27.167.360/0001-39", "CACHOEIRO DE ITAPEMIRIM": "27.165.588/0001-90", "CARIACICA": "27.150.549/0006-23", "CONCEICAO DO CASTELO": "27.165.570/0001-98", "FUNDAO": "27.165.182/0001-07", "GUACUI": "30.746.224/0001-08", "GUARAPARI": "30.805.395/0001-60", "IRUPI": "36.403.954/0001-92", "ITAGUACU": "27.167.451/0001-74", "JERONIMO MONTEIRO": "30.909.256/0001-87", "JOAO NEIVA": "31.776.479/0001-86", "LARANJA DA TERRA": "31.796.097/0001-14", "MARATAIZES": "01.609.408/0001-28", "MARECHAL FLORIANO": "39.385.927/0001-22", "MARILANDIA": "27.744.176/0001-04", "MIMOSO DO SUL": "27.174.119/0001-37", "MONTANHA": "27.174.051/0001-96", "MUNIZ FREIRE": "27.165.687/0001-71", "MUQUI": "27.082.403/0001-83", "NOVA VENECIA": "27.167.428/0001-80", "PANCAS": "30.631.478/0001-80", "PEDRO CANARIO": "30.987.728/0001-10", "PINHEIROS": "27.174.085/0001-80", "SANTA MARIA DE JETIBA": "18.238.321/0001-94", "SAO MATEUS": "32.085.984/0001-47", "SAO ROQUE DO CANAA": "30.047.478/0001-38", "VARGEM ALTA": "31.888.750/0001-75", "VILA PAVAO": "30.063.386/0001-41", "VILA VALERIO": "01.619.232/0001-95", "VILA VELHA": "27.165.554/0001-03", "VITORIA": "27.142.058/0009-83" }
 };
 
+// 2. NOMES DAS DESPESAS
 const CUSTEIO = [
     "Remuneração de profissionais da educação que atuam no programa PROETI nas escolas",
     "Formação continuada de profissionais da educação vinculados às escolas participantes do PROETI",
     "Seleção de profissionais para atuarem nas escolas participantes",
     "Aquisição de produtos de manutenção e conservação",
     "Contratação de serviços para manutenção e conservação",
+    // NOME UNIFICADO ABAIXO:
     "Aquisição de material de consumo para atividades de apoio ao ensino (materiais de expediente, didáticos, escolares, materiais de limpeza)",
     "aquisição de materiais de consumo e utensílios para alimentação escolar",
     "aluguel de equipamentos", "aluguel de espaços físicos", "contratação de serviços regulares",
     "Serviços públicos", "aquisição de materiais de laboratório", "compra de materiais esportivos", "transporte de alunos"
 ];
-
 const CAPITAL = ["construção de instalações necessárias ao ensino", "aquisição de equipamentos", "compra de mobiliário", "acervo para biblioteca"];
 
-// ITENS PARA AGRUPAR (Necessário para a lógica original funcionar)
-const ITENS_PARA_AGRUPAR = [
-    "materiais didáticos", 
-    "aquisição de material de consumo para atividades de apoio ao ensino", 
-    "aquisição de materiais escolares"
-];
-
+// 3. VARIÁVEIS GLOBAIS
 let editalGlobal = "", dadosFiltradosPlanilha = [], totalCusteioInicial = 0, totalCapitalInicial = 0;
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxbbvc3h7jDscetsxqTdcFtTp6yL1zONKjbnv6jrURPt7S3Ex820Vzr8eRnW3BGsMiq/exec';
 
+// 4. UTILITÁRIOS
 function mascaraMoeda(event) {
     const input = event.target;
     let value = input.value.replace(/\D/g, "");
@@ -48,6 +45,7 @@ function mudarTela(origem, destino) {
     document.getElementById(destino).classList.replace('tela-oculta', 'tela-ativa');
 }
 
+// 5. INICIALIZAÇÃO E CARREGAMENTO
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.btn-edital').forEach(btn => {
         btn.onclick = () => {
@@ -90,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
+// 6. INTERFACE (AGORA BUSCA O ITEM UNIFICADO DIRETO)
 function montarInterface() {
     const cont = document.getElementById('container-despesas');
     cont.innerHTML = ""; totalCusteioInicial = 0; totalCapitalInicial = 0;
@@ -98,16 +97,10 @@ function montarInterface() {
         cont.innerHTML += `<div class="secao-titulo">${tipo === 'c' ? 'Custeio' : 'Capital'}</div><div id="${gridID}" class="grid-despesas"></div>`;
         const grid = document.getElementById(gridID);
         lista.forEach(nome => {
-            let vOri = 0;
-            if (nome.includes("(materiais de expediente")) {
-                ITENS_PARA_AGRUPAR.forEach(orig => {
-                    const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === orig.normalize("NFD").toUpperCase().trim());
-                    vOri += r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
-                });
-            } else {
-                const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
-                vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
-            }
+            // Busca o valor na planilha pelo nome exato da despesa
+            const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === nome.normalize("NFD").toUpperCase().trim());
+            let vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
+            
             if(tipo === 'c') totalCusteioInicial += vOri; else totalCapitalInicial += vOri;
             const vF = "R$ " + vOri.toLocaleString('pt-BR', {minimumFractionDigits: 2});
             grid.innerHTML += `<div class="despesa-item"><label>${nome.toUpperCase()}</label><input type="text" class="input-v" data-tipo="${tipo}" data-nome="${nome}" value="${vF}" oninput="mascaraMoeda(event)"></div>`;
@@ -119,6 +112,7 @@ function montarInterface() {
     validarSaldos();
 }
 
+// 7. VALIDAÇÃO
 function validarSaldos() {
     let sC = 0, sK = 0;
     document.querySelectorAll('.input-v').forEach(i => { 
@@ -142,6 +136,7 @@ document.getElementById('btn-finalizar').onclick = () => {
     document.getElementById('btn-finalizar').style.display = "none";
 };
 
+// 8. PDF
 document.getElementById('btn-pdf').onclick = () => {
     const { jsPDF } = window.jspdf; const doc = new jsPDF();
     const mun = document.getElementById('select-municipio').value;
@@ -171,16 +166,10 @@ document.getElementById('btn-pdf').onclick = () => {
         const rows = [];
         document.querySelectorAll(`.input-v[data-tipo="${tipo}"]`).forEach(i => {
             const vRef = moneyToFloat(i.value);
-            let vOri = 0;
-            if (i.dataset.nome.includes("(materiais de expediente")) {
-                ITENS_PARA_AGRUPAR.forEach(orig => {
-                    const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === orig.normalize("NFD").toUpperCase().trim());
-                    vOri += r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
-                });
-            } else {
-                const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === i.dataset.nome.normalize("NFD").toUpperCase().trim());
-                vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
-            }
+            // Busca o valor original diretamente na planilha filtrada
+            const r = dadosFiltradosPlanilha.find(x => x[8].normalize("NFD").toUpperCase().trim() === i.dataset.nome.normalize("NFD").toUpperCase().trim());
+            let vOri = r ? parseFloat(String(r[9]).replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0 : 0;
+
             if (vRef > 0.01 || vOri > 0.01) {
                 rows.push([i.dataset.nome.toUpperCase(), vOri.toLocaleString('pt-BR',{minimumFractionDigits:2}), vRef.toLocaleString('pt-BR',{minimumFractionDigits:2})]);
             }
@@ -189,7 +178,6 @@ document.getElementById('btn-pdf').onclick = () => {
     };
 
     let currentY = 65;
-    
     const dataC = getItens('c');
     if(dataC.length > 0) {
         doc.setFont("helvetica", "bold"); doc.text("1. DESPESAS DE CUSTEIO", 10, currentY);
@@ -223,4 +211,3 @@ document.getElementById('btn-pdf').onclick = () => {
 
     doc.save(`PAF_REFORMULADO_${mun}_${par}.pdf`);
 };
-
